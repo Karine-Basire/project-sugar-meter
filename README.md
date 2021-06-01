@@ -59,6 +59,7 @@ _Automatise les tâches les plus courantes des applications Symfony_
 _monitors application performance_
 
 > composer require --dev symfony/profiler-pack
+
 > symfony composer req debug --dev
 
 ## Installing annotations (alias by symfony flex)
