@@ -134,7 +134,7 @@ _3 tools: entity, repository, manager_
 
 > composer require symfony/security-bundle
 
-## Verification tools
+## Verification tools password
 
 > php bin/console debug:autowiring password
 
@@ -148,7 +148,9 @@ _3 tools: entity, repository, manager_
 - **user data in the database ?**: yes
 - **property name unique**: email
 - **need to hash/check user password**: yes
+
   > php bin/console make:entity User
+
 - **property name:** nickname -> **type:** string -> **lenght**: 80 -> **null:** no
 
 ## Les relations
@@ -181,3 +183,6 @@ _Protection against CSRF attacks is built into the Form component_
 > php bin/console make:controller UserController
 > php bin/console make:controller ConsumptionController
 
+## Verification tools form
+
+> php bin/console debug:autowiring form
