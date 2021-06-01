@@ -159,7 +159,6 @@ _monitors application performance_
 
 - **property name:** products -> **type:** ManyToMany -> **entity be related**: Product -> **property null**: yes -> **access/update**: yes -> **name inside**: default
 
-
-## Create dummy database users
-
-> php bin/console make:fixtures
+## CSRF Protection
+_Protection against CSRF attacks is built into the Form component_
+> composer require symfony/security-csrf
