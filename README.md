@@ -128,8 +128,6 @@ _3 tools: entity, repository, manager_
 
 > php bin/console doctrine:migrations:status
 
-
-
 ## Installing component security Symfony
 
 > composer require symfony/security-bundle
@@ -137,6 +135,8 @@ _3 tools: entity, repository, manager_
 ## Verification tools password
 
 > php bin/console debug:autowiring password
+
+**------------------DEBUT ENTITE USER, SECURITE------------------**
 
 ## Entity User
 
@@ -173,9 +173,9 @@ _Protection against CSRF attacks is built into the Form component_
 
 > composer require symfony/security-csrf
 
-## Installing Form (alias by symfony flex)
+## Generating Controller Formulaire d'inscription
 
-> composer require form
+> php bin/console make:controller RegisterController
 
 ## Generating Controllers
 > php bin/console make:controller HomeController
