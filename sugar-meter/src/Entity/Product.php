@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProductRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -36,6 +38,21 @@ class Product
      * @ORM\Column(type="integer")
      */
     private $sugar_thousand;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Consumption::class, inversedBy="product")
+     */
+    private $consumption;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="products")
+     */
+    private $users;
+
+    public function __construct()
+    {
+        $this->users = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -86,6 +103,45 @@ class Product
     public function setSugarThousand(int $sugar_thousand): self
     {
         $this->sugar_thousand = $sugar_thousand;
+
+        return $this;
+    }
+
+    public function getConsumption(): ?Consumption
+    {
+        return $this->consumption;
+    }
+
+    public function setConsumption(?Consumption $consumption): self
+    {
+        $this->consumption = $consumption;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users[] = $user;
+            $user->addProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        if ($this->users->removeElement($user)) {
+            $user->removeProduct($this);
+        }
 
         return $this;
     }

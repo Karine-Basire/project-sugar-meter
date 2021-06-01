@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ConsumptionRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,22 @@ class Consumption
      * @ORM\Column(type="datetime")
      */
     private $create_at;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Product::class, mappedBy="consumption")
+     */
+    private $product;
+
+    /**
+     * @ORM\OneToMany(targetEntity=User::class, mappedBy="consumption")
+     */
+    private $user;
+
+    public function __construct()
+    {
+        $this->product = new ArrayCollection();
+        $this->user = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -69,6 +87,66 @@ class Consumption
     public function setCreateAt(\DateTimeInterface $create_at): self
     {
         $this->create_at = $create_at;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Product[]
+     */
+    public function getProduct(): Collection
+    {
+        return $this->product;
+    }
+
+    public function addProduct(Product $product): self
+    {
+        if (!$this->product->contains($product)) {
+            $this->product[] = $product;
+            $product->setConsumption($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProduct(Product $product): self
+    {
+        if ($this->product->removeElement($product)) {
+            // set the owning side to null (unless already changed)
+            if ($product->getConsumption() === $this) {
+                $product->setConsumption(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getUser(): Collection
+    {
+        return $this->user;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->user->contains($user)) {
+            $this->user[] = $user;
+            $user->setConsumption($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        if ($this->user->removeElement($user)) {
+            // set the owning side to null (unless already changed)
+            if ($user->getConsumption() === $this) {
+                $user->setConsumption(null);
+            }
+        }
 
         return $this;
     }
