@@ -12,6 +12,7 @@
 - MySQL 5.7.31
 - COMPOSER 2.0.14
 - SYMFONY CLI 4.25.2
+- SYMFONY VERSION 5.3.0
 
 ## CONNECTION DATABASE
 
@@ -138,6 +139,7 @@ _monitors application performance_
 > php bin/console make:user
 
 ### <u>Third:</u>
+
 - **name of the security user class**: User
 - **user data in the database ?**: yes
 - **property name unique**: email
@@ -160,5 +162,18 @@ _monitors application performance_
 - **property name:** products -> **type:** ManyToMany -> **entity be related**: Product -> **property null**: yes -> **access/update**: yes -> **name inside**: default
 
 ## CSRF Protection
+
 _Protection against CSRF attacks is built into the Form component_
+
 > composer require symfony/security-csrf
+
+## Installing Form (alias by symfony flex)
+
+> composer require form
+
+## Generating Controllers
+> php bin/console make:controller HomeController
+> php bin/console make:controller ProductController
+> php bin/console make:controller UserController
+> php bin/console make:controller ConsumptionController
+
