@@ -15,7 +15,7 @@
 
 ## CONNECTION DATABASE
 
-> DATABASE_URL="mysql://root:bXmsI8JEhXuGpb9W@127.0.0.1:3306/sugar-meter?serverVersion=5.7"
+> DATABASE_URL="mysql://root:bXmsI8JEhXuGpb9W@127.0.0.1:3306/sugar?serverVersion=5.7"
 
 ## Checking if my computer meets all requirements
 
