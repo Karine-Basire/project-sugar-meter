@@ -149,7 +149,7 @@ _3 tools: entity, repository, manager_
 - **property name unique**: email
 - **need to hash/check user password**: yes
 
-  > php bin/console make:entity User
+> php bin/console make:entity User
 
 - **property name:** nickname -> **type:** string -> **lenght**: 80 -> **null:** no
 
