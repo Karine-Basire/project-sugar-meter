@@ -54,6 +54,13 @@ _Automatise les tâches les plus courantes des applications Symfony_
 
 > composer require logger
 
+## Profiler and Debugger
+
+_monitors application performance_
+
+> composer require --dev symfony/profiler-pack
+> symfony composer req debug --dev
+
 ## Installing annotations (alias by symfony flex)
 
 > composer require annotations
@@ -120,11 +127,7 @@ _3 tools: entity, repository, manager_
 
 > php bin/console doctrine:migrations:status
 
-## Profiler and Debugger
 
-_monitors application performance_
-
-> composer require --dev symfony/profiler-pack
 
 ## Installing component security Symfony
 
