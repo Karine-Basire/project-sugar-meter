@@ -173,16 +173,22 @@ _Protection against CSRF attacks is built into the Form component_
 
 > composer require symfony/security-csrf
 
-## Generating Controller Formulaire d'inscription
+## Generating Controller register
 
 > php bin/console make:controller RegisterController
 
 ## Generating Controllers
 > php bin/console make:controller HomeController
+
 > php bin/console make:controller ProductController
+
 > php bin/console make:controller UserController
+
 > php bin/console make:controller ConsumptionController
 
 ## Verification tools form
 
 > php bin/console debug:autowiring form
+
+## Installing Form
+>php bin/console make:form
