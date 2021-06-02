@@ -13,6 +13,9 @@ class UserController extends AbstractController
      */
     public function index(): Response
     {
+        $user = (new User())
+            ->setEmail('mail@mail.com');
+        $user->setPassword($passwordHasver->hashPassword($user, 'aaaaa'));
         return $this->render('user/index.html.twig', [
             'controller_name' => 'UserController',
         ]);
