@@ -191,4 +191,6 @@ _Protection against CSRF attacks is built into the Form component_
 > php bin/console debug:autowiring form
 
 ## Installing Form
->php bin/console make:form
+> php bin/console make:form
+
+**name form**: consumptionType -> **name entity**: Consumption
