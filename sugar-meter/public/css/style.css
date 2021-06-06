@@ -1,0 +1,123 @@
+body {
+	margin:0;
+	padding:0;
+	font-family:arial;
+	font-weight:bold;
+	font-size:18px;
+}
+#conteneur {
+	display: flex;
+	flex-direction:column;
+}
+header {
+	background-color:#fbd8bc;
+	text-align:center;
+	height:40px;
+	padding-top:20px;
+	margin-bottom:10px;
+}
+nav {
+	background-color:#b7dde8;
+	text-align:center;
+	height:30px;
+	padding-top:15px;
+	margin-bottom:10px;
+}
+main {
+	background-color:#d8d8d8;
+	padding:10px;
+	margin-bottom:10px;
+	display:flex;
+	flex-direction:column;
+}
+section {
+	background-color:#8db1e3;
+	text-align:center;
+	height:850px;
+	padding-top:80px;
+}
+aside {
+	background-color:#d99690;
+	text-align:center;
+	height:30px;
+	padding-top:15px;
+	margin-top:10px;
+}
+footer {
+	background-color:#d3d4ac;
+	text-align:center;
+	height:40px;
+	padding-top:20px;
+	margin-bottom:10px;
+}
+@media screen and (min-width:480px) and (max-width:959px) {
+	#contenu {
+		display:flex;
+	}
+	nav {
+		width:25%;
+		height:auto;
+		margin-right:10px;
+	}
+	main {
+		width:75%;
+	}
+}
+@media screen and (min-width:960px) {
+	#conteneur {
+		width:90%;
+		margin:auto;
+	}
+	#contenu {
+		display:flex;
+	}
+	nav {
+		width:25%;
+		height:auto;
+		margin-right:10px;
+	}
+	main {
+		flex-direction:row;
+		width:75%;
+	}
+	section {
+		width:75%;
+		margin-right:10px;
+	}
+	#boiteAside {
+		width:25%;
+		display:flex;
+		flex-direction:column;
+		justify-content:space-between;
+	}
+	aside {
+	margin-top:0px;
+	height:50px;
+}
+}
+.deck {
+	background-color: pink;
+	padding: .5rem;
+  }
+
+  .card {
+	background-color: lightblue;
+	border: solid 0.1rem black;
+	border-radius: 2rem;
+	padding: 1rem;
+	margin: 0.5rem;
+	max-width: 20rem;
+  }
+
+  .img_card {
+	background-color: yellow;
+	width: 5rem;
+	height: 5rem;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+  }
+
+  .img_card>img {
+	display: none;
+  }
