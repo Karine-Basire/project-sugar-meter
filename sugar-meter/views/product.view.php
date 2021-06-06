@@ -20,10 +20,8 @@ ob_start();
             <td><?= $products[$i]->getName() ?></td>
             <td><?= $products[$i]->getSugarThousand() ?></td>
             <td><?= $products[$i]->getcodeBar() ?></td>
-
-            <td><a href"">Supprimer</td>
+            <td><a href"">Supprimer</a></td>
         </tr>
-
     <?php endfor; ?>
 </table>
 <?php
