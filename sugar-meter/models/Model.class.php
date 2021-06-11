@@ -12,10 +12,24 @@
 //gestion de connexion à la BDD
 abstract class Model
 {
-    private static $pdo;
 
+    private const HOST = 'localhost';
+    private const DB = 'sugar';
+    private const USER = 'root';
+    private const PWD = '';
+
+    private static $pdo;//on le met en static pour qu'il soit accessible pour toute les class(fille) qui heritera de la class Model
+
+    //function setBDD en private pour qu'elle ne soit pas appellé par des algorythme tiers et ni par les class filles
+    //la connexion sera appellé juste avec la fonction getBDD
     private static function setBDD(){
-        self::$pdo = new PDO("mysql:host=localhost;dbname=sugar;charset=utf8", "root", "");
+        //je remplis mon attribut static pdo
+        self::$pdo = new PDO('mysql:host='. self::HOST . ';dbname='. self::DB,
+        self::USER,
+        self::PWD,
+        [PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8']
+    );
+        //gestion des erreurs 
         self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     }
     //pattern singleton
