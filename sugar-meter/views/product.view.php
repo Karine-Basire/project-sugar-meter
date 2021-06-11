@@ -20,12 +20,14 @@ ob_start();
             <td><?= $products[$i]->getName() ?></td>
             <td><?= $products[$i]->getSugarThousand() ?></td>
             <td><?= $products[$i]->getcodeBar() ?></td>
-            <td><a href"">Supprimer</a></td>
-        </tr>
-    <?php endfor; ?>
+            <td>
+                <form method="POST" action="<?= URL ?>favoris/suppression/<?= $products[$i]->getId(); ?>" onSubmit="return confirm('Voulez-vous vraiment supprimer le produit ?');">
+                    <button class="btn btn-danger" type="submit">Supprimer</button>
+                </form>
+            </td>
+        <?php endfor; ?>
 </table>
 <?php
 $titre = "Favoris";
 $content = ob_get_clean();
-require "template.view.php";
-?>
+require "views/commons/template.view.php";

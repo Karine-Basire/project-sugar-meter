@@ -18,11 +18,20 @@ class ProductsController
         $this->productManager->chargementProducts();
     }
 
-    //gestion de la route views/product.view.php, création d'une nouvelle fonction qui va faire afficher livre
-    public function afficherProducts(){
+    //gestion de la route views/product.view.php, création d'une nouvelle fonction qui va faire afficher le produit
+    public function afficherProducts()
+    {
         //*com perso* je n'ai pas accés à la variable private $productManager; du coup je met this pour y accéder
         //*com perso*La variable products va récupérer tous les produits de ProductManager
         $products = $this->productManager->getProducts();
         require "views/product.view.php";
+    }
+
+    public function deleteProduct($id)
+    {
+        // $nomImage = $this->productManager->getProductById($id)->getPicture();
+        // unlink("public/img/".$nomImage);
+        $this->productManager->deleteProductBD($id);
+        header('Location: ' . URL . "favoris");
     }
 }

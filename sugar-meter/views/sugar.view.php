@@ -18,5 +18,4 @@
 <?php
 $titre = "Ajax JS";
 $content = ob_get_clean();
-require "template.view.php";
-?>
+require "views/commons/template.view.php";
