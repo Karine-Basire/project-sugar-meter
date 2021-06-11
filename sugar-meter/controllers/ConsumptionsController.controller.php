@@ -18,7 +18,7 @@ class ConsumptionsController
         $this->consumptionManager->chargementConsumption();
     }
 
-    //gestion de la route views/product.view.php, création d'une nouvelle fonction qui va faire afficher livre
+    //gestion de la route views/product.view.php, création d'une nouvelle fonction qui va faire afficher produit
     public function afficherConsumptions()
     {
         //*com perso* je n'ai pas accés à la variable private $productManager; du coup je met this pour y accéder
